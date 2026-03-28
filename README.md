@@ -1,21 +1,31 @@
-# CCR9 Expression Profiling in Melanoma CD8+ T Cells
-**Analysis for the publication: "Secretory IgA amplification during immune checkpoint blockade enhances the control of tumor growth by enterotropic T cells"**
+# CCR9 Expression Analysis in Melanoma CD8+ T Cells
+**Analytical pipeline for the publication in *Science Advances***
 
-This repository contains the scRNA-seq processing pipeline used to validate the expression of the chemokine receptor **CCR9** in cytotoxic T cells within the tumor microenvironment.
+[![DOI:10.1126/sciadv.adk0617](https://img.shields.io/badge/DOI-10.1126%2Fsciadv.adk0617-blue.svg)](https://doi.org/10.1126/sciadv.adk0617)
 
 ### Project Overview
-The analysis focuses on CD8+ T cells isolated from melanoma patients to investigate how enterotropic T cells expressing CCR9 contribute to tumor growth control during immune checkpoint blockade (ICB).
+This repository contains the scRNA-seq processing and quality control pipeline used to investigate the role of enterotropic T cells in tumor growth control. The analysis specifically focuses on the expression of the chemokine receptor **CCR9** in cytotoxic T cells during immune checkpoint blockade (ICB).
 
-### Data Source
-*   **Dataset:** Processed scRNA-seq data from NCBI Gene Expression Omnibus (GEO).
-*   **Accession:** [GSE123139](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123139).
-*   **Sample Size:** 18 patients with metadata including tissue origin, disease stage, and treatment.
+**Publication:** [Secretory IgA amplification during immune checkpoint blockade enhances the control of tumor growth by enterotropic T cells](https://doi.org/10.1126/sciadv.adk0617)  
+*De Ponte Conti, B., et al. Science Advances (2024).*
 
-### Computational Workflow
-1.  **Data Integration:** Importing preprocessed matrices into `Scanpy (v1.9.6)` as AnnData objects and concatenating via `pandas`.
-2.  **Cell Selection:** Filtering for **CD8+ T cells** based on the expression of canonical markers: *CD3D, CD3E, CD3G, CD8A,* and *CD8B*.
-3.  **Visualization:** Targeted analysis of **CCR9** expression across patient groups using advanced dot plot parameters to ensure statistical clarity.
+---
 
-### Key Tools
-*   **Scanpy:** For single-cell analysis and visualization.
-*   **Pandas:** For metadata management and object concatenation.
+### Data & Methodology
+The analysis was performed on single-cell transcriptomic data from **CD8+ T cells** isolated from melanoma patients.
+
+*   **Data Source:** NCBI GEO accession [GSE123139](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123139).
+*   **Preprocessing:** Expression matrices were imported into `Scanpy (v1.9.6)` as AnnData objects and concatenated using `pandas` for a unified analysis.
+*   **Metadata Integration:** Each sample was annotated with patient ID, tissue origin, disease stage, and treatment status.
+*   **Cell Selection:** CD8+ T cells were identified and subsetted based on the expression of canonical markers: *CD3D, CD3E, CD3G, CD8A,* and *CD8B*.
+
+### Key Visualization
+The final analysis visualizes **CCR9 expression** across different patient groups using a customized dot plot to highlight phenotypic differences:
+*   **Tool:** `sc.pl.dotplot`
+*   **Parameters:** `dot_max=0.01`, `dot_min=0`, `log=True`, `standard_scale='var'`.
+
+### Requirements
+*   Python >= 3.8
+*   Scanpy == 1.9.6
+*   Pandas
+*   Matplotlib / Seaborn
