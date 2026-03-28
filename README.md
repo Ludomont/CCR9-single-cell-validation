@@ -1,5 +1,4 @@
 # CCR9 Expression Analysis in Melanoma CD8+ T Cells
-**Analytical pipeline for the publication in *Science Advances***
 
 
 ### Project Overview
