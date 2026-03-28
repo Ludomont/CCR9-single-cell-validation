@@ -4,8 +4,7 @@
 ### Project Overview
 This repository contains the scRNA-seq processing and quality control pipeline used to investigate the role of enterotropic T cells in tumor growth control. The analysis specifically focuses on the expression of the chemokine receptor **CCR9** in cytotoxic T cells during immune checkpoint blockade (ICB).
 
-**Publication:** [Secretory IgA amplification during immune checkpoint blockade enhances the control of tumor growth by enterotropic T cells](https://www.science.org/doi/10.1126/sciadv.adk0617)
-
+**Publication:** Benedetta De Ponte Conti et al. ,Secretory IgA amplification during immune checkpoint blockade enhances the control of tumor growth by enterotropic T cells.Sci. Adv.11,eaeb5308(2025).DOI:10.1126/sciadv.aeb5308
 
 **Data:** 
 ---
